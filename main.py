@@ -38,8 +38,8 @@ if __name__ == "__main__":
     print()
     while True:
         try:
-            print(Fore.BLUE, end="")
-            out = chat(input(""), data)
+            print(Fore.BLUE + "You: " + Fore.RESET, end="")
+            out = chat(input(), data)
             if out:
                 print(Fore.GREEN + f"NAA: {Fore.RESET + str(out)}")
         except KeyboardInterrupt:
