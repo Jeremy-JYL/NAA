@@ -23,8 +23,7 @@ if __name__ == "__main__":
     with open(file, "r") as f:
         file_size = f.seek(0, 2)
         f.seek(0)
-        print(Fore.BLUE, end="")
-        bar = tqdm.tqdm(total=file_size, unit='B', unit_scale=True)
+        bar = tqdm.tqdm(total=file_size, unit='B', unit_scale=True, colour="BLUE")
         yaml_data = ''
         chunk_size = 1024
         while True:
