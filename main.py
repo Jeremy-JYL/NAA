@@ -1,8 +1,5 @@
-import yaml
-import random
-import webbrowser
-import datetime
-import sys
+import yaml, sys, random, webbrowser, datetime, sys, tqdm
+from colorama import Fore
 
 def chat(message, data):
     for i in data.values():
@@ -11,20 +8,40 @@ def chat(message, data):
                 webbrowser.open(i["Responds"][0])
             elif str(i["Responds"][0]).startswith("time"):
                 return datetime.datetime.now()
+            elif str(i["Responds"][0]) == "code":
+                print(Fore.RESET, end="")
+                exec(i["Code"])
             else:
                 return random.choice(i["Responds"])
 
 if __name__ == "__main__":
+    print("NAA - Not An AI")
     if len(sys.argv) > 1:
         file = sys.argv[1]
     else:
         file = "data.yaml"
     with open(file, "r") as f:
-        data = yaml.safe_load(f.read())
+        file_size = f.seek(0, 2)
+        f.seek(0)
+        print(Fore.BLUE, end="")
+        bar = tqdm.tqdm(total=file_size, unit='B', unit_scale=True)
+        yaml_data = ''
+        chunk_size = 1024
+        while True:
+            chunk = f.read(chunk_size)
+            if not chunk:
+                break
+            yaml_data += chunk
+            bar.update(len(chunk))
+        data = yaml.safe_load(yaml_data)
+        del yaml_data
+        bar.close()
+    print()
     while True:
         try:
-            out = chat(input("NAA> "), data)
+            print(Fore.BLUE, end="")
+            out = chat(input(""), data)
             if out:
-                print(out)
+                print(Fore.GREEN + f"NAA: {Fore.RESET + str(out)}")
         except KeyboardInterrupt:
             break

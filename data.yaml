@@ -1,83 +1,107 @@
 # Start Greeting
 Greeting:
   Triggers:
-  - hello!
-  - Hello world!
-  - hello!
-  - hello
+    - hello!
+    - Hello world!
+    - hello!
+    - hello
   Responds:
-  - Hello!
-  - Nice to meet you!
-  - How are you?
-  - I great how are you?
+    - Hello!
+    - Nice to meet you!
+    - How are you?
+    - I great how are you?
 Greeting_good_responds:
   Triggers:
-  - i'm good
-  - i'm very happy
-  - :)
-  - i'm great
-  - i'm greet!
-  - i'm fine
-  - i'm good how about you?
+    - i'm good
+    - i'm very happy
+    - :)
+    - i'm great
+    - i'm greet!
+    - i'm fine
+    - i'm good how about you?
   Responds:
-  - Great!
-  - Me too!
+    - Great!
+    - Me too!
 Greeting_bad_responds:
   Triggers:
-  - i'm not very happy
-  - :(
-  - i feel bad!
+    - i'm not very happy
+    - :(
+    - i feel bad!
   Responds:
-  - I feel sorry for you :(
+    - I feel sorry for you :(
 Greeting_responds:
   Triggers:
-  - how are you?
-  - how about you?
+    - how are you?
+    - how about you?
   Responds:
-  - I'm great!
-  - I'm good :)
+    - I'm great!
+    - I'm good :)
 Greeting_me_too_responds:
   Triggers:
-  - me too!
-  - me too
+    - me too!
+    - me too
   Responds:
-  - Thanks!
-  - Great
+    - Thanks!
+    - Great
+Greeting_great_nice_responds:
+  Triggers:
+      - great
+      - great!
+      - nice
+      - nice!
+  Responds:
+      - Thanks!
 # End Greeting
 # Start About
 Name:
   Triggers:
-  - who are you?
-  - what is you name?
+      - who are you?
+      - what is you name?
   Responds:
-  - My name is NAA!
-  - I'm a NAA Bot!
+      - My name is NAA!
+      - I'm a NAA Bot!
 About:
   Triggers:
-  - what about you?
-  - about
-  - hey naa who are you?
+      - what about you?
+      - about
+      - hey naa who are you?
   Responds:
-  - My name is NAA, NAA stand for Not An AI
+      - My name is NAA, NAA stand for Not An AI
 What_can_you_do?:
   Triggers:
-  - what can you do?
-  - what thing can you do?
+      - what can you do?
+      - what thing can you do?
   Responds:
-  - I can do many thing, for example I can tell you what time is it! And there more!
+      - I can do many thing, for example I can tell you what time is it! And there more!
 NAA_Github:
   Triggers:
-  - open NAA github
-  - open your homepage!
+      - open NAA github
+      - open your homepage!
   Responds:
-  - https://github.com/Jeremy-JYL/NAA
+    - https://github.com/Jeremy-JYL/NAA
 # End About
 # Start Time
 Time:
   Triggers:
-  - what is today date?
-  - what time is it?
-  - what date is it?
+    - what is today date?
+    - what time is it?
+    - what date is it?
+    - what time is it
+    - what date is it
   Responds:
-  - time
+    - time
 # End Time
+# Start Python Exec
+PyExec:
+  Triggers:
+    - pyexec
+  Responds:
+    - code
+  Code: |
+    while True:
+      try:
+        exec(input(">>> "))
+      except KeyboardInterrupt:
+        break
+      except Exception as e: print(e)
+# End pyexec
