@@ -4,7 +4,7 @@ from colorama import Fore
 # Add Learning support
 def learn(t, r):
     if r != "":
-        data.append({"Triggers": t.split(), "Responds": r.split(" `~` ")})
+        data.append({"Triggers": [t], "Responds": r.split("`~`")})
 
 # Main Chat Function
 def chat(message, data):
@@ -20,7 +20,7 @@ def chat(message, data):
                     exec(i["Code"])
                 else:
                     return random.choice(i["Responds"])
-        learn(message.lower(), input("Responds (' `~` ' New Items): "))
+        learn(message.lower(), input("Responds ('`~`' New Items): "))
 
 
 if __name__ == "__main__":
