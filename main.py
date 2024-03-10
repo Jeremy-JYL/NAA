@@ -1,10 +1,13 @@
 import yaml, sys, random, webbrowser, datetime, sys, tqdm
 from colorama import Fore
 
+learn_lst = []
+
 # Add Learning support
 def learn(t, r):
     if r != "":
         data.append({"Triggers": [t], "Responds": r.split("`~`")})
+        learn_lst.append({t: {"Triggers": [t], "Responds": r.split("`~`")}})
 
 # Main Chat Function
 def chat(message, data):
@@ -58,3 +61,11 @@ if __name__ == "__main__":
                 print(Fore.GREEN + f"NAA: {Fore.RESET + str(out)}")
         except KeyboardInterrupt:
             break
+    if input("\nExport? [y/N]: ") != "y":
+        pass
+    else:
+        with open(input("File: "), "a") as f:
+            content = ""
+            for i in learn_lst:
+                content = content + yaml.dump(i)
+            f.write(content)
