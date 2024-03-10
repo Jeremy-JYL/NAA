@@ -2,9 +2,11 @@
 Greeting:
   Triggers:
     - hello!
-    - Hello world!
+    - hello world!
     - hello!
     - hello
+    - hi
+    - hi!
   Responds:
     - Hello!
     - Nice to meet you!

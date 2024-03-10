@@ -18,6 +18,8 @@ def chat(message, data):
                 elif str(i["Responds"][0]) == "code":
                     print(Fore.RESET, end="")
                     exec(i["Code"])
+                    print()
+                    return
                 else:
                     return random.choice(i["Responds"])
         learn(message.lower(), input("Responds ('`~`' New Items): "))
