@@ -1,4 +1,4 @@
-import json
+import yaml
 import random
 import webbrowser
 import datetime
@@ -18,9 +18,9 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         file = sys.argv[1]
     else:
-        file = "data.json"
-    with open("data.json", "r") as f:
-        data = json.loads(f.read())
+        file = "data.yaml"
+    with open(file, "r") as f:
+        data = yaml.safe_load(f.read())
     while True:
         try:
             out = chat(input("NAA> "), data)
