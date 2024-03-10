@@ -55,6 +55,19 @@ Or:
 Special code:
 1. time - will return the time for the datelibary
 2. link ( Start with "http" or "https" ) - with open the link
+3. code - Need to create a new tag under Responds, which called Code
+
+Note code tag might have security issue
+
+For example:
+
+    Tag Name:
+      Triggers:
+        - triggers
+      Responds:
+        - code
+      Code: |
+        print("Hello World")
 
 ## Why I create this
 
