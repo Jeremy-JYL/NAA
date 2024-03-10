@@ -14,7 +14,7 @@ A - AI
 
 Just run the main.py!
 
-Default it will run with default `data.yaml` use `main.py {yaml or json File}` to run alternative Yaml or Json File!
+Default it will run with default `data.yaml` use `main.py { yaml or json File }` to run alternative Yaml or Json File!
 
 ## How it is work?
 
