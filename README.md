@@ -14,11 +14,11 @@ A - AI
 
 Just run the main.py!
 
-Default it will run with default `data.json` use `main.py {Json File}` to run alternative Json File!
+Default it will run with default `data.yaml` use `main.py {yaml or json File}` to run alternative Yaml or Json File!
 
 ## How it is work?
 
-Basicly NAA work like a big if and else statement but use a json file like a AI Model inside there Triggers and Responds
+Basicly NAA work like a big if and else statement but use a yaml or json file like a AI Model inside there Triggers and Responds
 
 ## Files Format
 
@@ -43,6 +43,14 @@ For example:
             ]
         }
     }
+
+Or:
+
+    Tag Name:
+      Triggers:
+        - triggers
+      Responds:
+       - Responds
 
 Special code:
 1. time - will return the time for the datelibary
